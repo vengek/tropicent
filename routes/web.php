@@ -11,6 +11,6 @@
 |
 */
 
-$router->get('/article/{/id}', [
+$router->get('/article/{id}', [
     'uses' => 'ArticleController@show'
 ]);

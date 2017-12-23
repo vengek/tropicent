@@ -8,8 +8,8 @@ class ArticleController extends Controller
 {
 
     private $dependencies = [
-        'article' => 'path1',
-        'comments' => 'path2'
+        'article' => 'article',
+        'comments' => 'comments.json'
     ];
 
     private $requester;
@@ -21,7 +21,7 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        $article = $this->requester->get($this->dependencies['article'] . $id);
+        $article = $this->requester->get($this->dependencies['article'] . $id . '.json');
         $comments = $this->requester->get($this->dependencies['comments']);
 
         return (new ArticleTransformer($article, $comments))->transform();

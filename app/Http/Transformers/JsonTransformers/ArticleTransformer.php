@@ -12,8 +12,8 @@ class ArticleTransformer extends JsonTransformer
 
     public function __construct(MicroServiceResponse $article, MicroServiceResponse $comments)
     {
-        $this->article = $this->parse($article->getData());
-        $this->comments = $this->parse($comments->getData());
+        $this->article = $this->parse($article->getData())->article;
+        $this->comments = $this->parse($comments->getData())->comments;
     }
 
     public function transform()

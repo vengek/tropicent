@@ -16,7 +16,7 @@ abstract class JsonTransformer implements ITransformer
 {
     abstract public function transform();
 
-    protected function parse(string $response) : object
+    protected function parse(string $response)
     {
         return json_decode($response);
     }

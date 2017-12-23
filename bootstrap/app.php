@@ -48,6 +48,11 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+$app->bind(
+    \App\Http\IMicroServiceRequester::class,
+    \App\Http\FileMicroServiceRequester::class
+);
+
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
